@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arXiv CS Daily - Paper Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="paper-detail-container"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Parse the 'id' query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const paperId = urlParams.get('id');
+
+        // Render the paper detail if an ID is present
+        if (paperId) {
+            renderPaperDetail(paperId, 'paper-detail-container');
+        } else {
+            document.getElementById('paper-detail-container').innerHTML = '<p>Paper ID not specified.</p>';
+        }
+    </script>
+</body>
+</html>

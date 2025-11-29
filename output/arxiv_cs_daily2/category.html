@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Papers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="paper-list-container"></div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Parse the 'cat' query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const cat = urlParams.get('cat');
+
+        // Get papers by category and render them
+        const paperList = getPapersByCategory(cat);
+        renderPaperList(paperList, 'paper-list-container');
+    </script>
+</body>
+</html>
